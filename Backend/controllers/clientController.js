@@ -1,5 +1,4 @@
 import ClientService from "../services/ClientService.js";
-import Client from "../models/Client.js"
 
 export default class ClientController {
     async create(req, res) {

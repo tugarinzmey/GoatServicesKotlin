@@ -1,14 +1,15 @@
 import { Router } from "express";
 import ClientController from "../controllers/clientController.js";
+import authMiddleware from "../middleware/authMiddleware.js";
 
 const clientRouter = new Router();
 const clientController = new ClientController();
 
 
-clientRouter.post('', (req, res) => clientController.create(req, res));
-clientRouter.get('', (req, res) => clientController.getAll(req, res));
-clientRouter.get('/:id', (req, res) => clientController.getOne(req, res));
-clientRouter.put('', (req, res) => clientController.update(req, res));
-clientRouter.delete('/:id', (req, res) => clientController.delete(req, res));
+clientRouter.post('', authMiddleware, clientController.create);
+clientRouter.get('', authMiddleware, clientController.getAll);
+clientRouter.get('/:id', authMiddleware, clientController.getOne);
+clientRouter.put('', authMiddleware, clientController.update);
+clientRouter.delete('/:id', authMiddleware, clientController.delete);
 
-export default clientRouter;
+export default clientRouter
