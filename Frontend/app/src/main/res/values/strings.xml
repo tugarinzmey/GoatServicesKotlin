@@ -1,5 +1,26 @@
 <resources>
     <string name="app_name">GOAT Услуги</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+
+    <string name="client_name_hint">Введите имя клиента</string>
+    <string name="client_lastname_hint">Введите отчество клиента</string>
+    <string name="client_email_hint">Введите Email пользователя</string>
+    <string name="client_phone_hint">Введите телефон пользователя</string>
+    <string name="client_status_hint">Введите статус пользователя</string>
+
+    <string name="save_button">Сохранить</string>
+    <string name="delete_button">Удалить</string>
+    <string name="add_button">Добавить</string>
+
+    <string name="client_menu_button">Клиенты</string>
+    <string name="payment_menu_button">Выплаты</string>
+    <string name="service_menu_button">Услуги</string>
+
+
+    <string name="service_name_hint">Введите наименование услуги</string>
+    <string name="service_price_hint">Введите цену услуги</string>
+    <string name="payment_client_hint">Выберите Клиента</string>
+    <string name="payment_service_hint">Выберите услугу</string>
+    <string name="payment_date_hint">Введите дату</string>
+    <string name="payment_quantity_hint">Введите количество</string>
+    <string name="payment_amount_hint">Введите сумму</string>
 </resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Client_menu_button"
+        android:icon="@drawable/client_image_24"
+        android:title="@string/client_menu_button" />
+    <item
+        android:id="@+id/Payment_menu_button"
+        android:icon="@drawable/payment_image_24"
+        android:title="@string/payment_menu_button" />
+    <item
+        android:id="@+id/Service_menu_button"
+        android:icon="@drawable/service_image_24"
+        android:title="@string/service_menu_button" />
+</menu>
