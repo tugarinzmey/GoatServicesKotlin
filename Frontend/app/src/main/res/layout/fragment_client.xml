@@ -23,13 +23,13 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="10dp"
         android:hint="@string/client_lastname_hint"
-        app:layout_constraintBottom_toTopOf="@+id/payment_date"
+        app:layout_constraintBottom_toTopOf="@+id/client_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/client_name" />
 
     <EditText
-        android:id="@+id/payment_date"
+        android:id="@+id/client_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -39,26 +39,26 @@
         app:layout_constraintTop_toBottomOf="@+id/client_lastname" />
 
     <EditText
-        android:id="@+id/payment_quantity"
+        android:id="@+id/client_phone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="9dp"
         android:hint="@string/client_phone_hint"
-        app:layout_constraintBottom_toTopOf="@+id/payment_amount"
+        app:layout_constraintBottom_toTopOf="@+id/client_status"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/payment_date" />
+        app:layout_constraintTop_toBottomOf="@+id/client_email" />
 
     <EditText
-        android:id="@+id/payment_amount"
+        android:id="@+id/client_status"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:hint="@string/client_status_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/payment_quantity" />
+        app:layout_constraintTop_toBottomOf="@+id/client_phone" />
 
 
     <Button
