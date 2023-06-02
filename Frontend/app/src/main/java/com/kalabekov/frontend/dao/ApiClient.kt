@@ -1,6 +1,6 @@
 package com.kalabekov.frontend.dao
 
-import com.kalabekov.frontend.models.Client
+import com.kalabekov.frontend.client.Client
 import retrofit2.Call
 import retrofit2.http.*
 

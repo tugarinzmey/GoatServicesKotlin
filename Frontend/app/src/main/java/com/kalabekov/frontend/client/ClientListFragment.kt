@@ -1,7 +1,6 @@
-package com.kalabekov.frontend
+package com.kalabekov.frontend.client
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
@@ -10,10 +9,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.kalabekov.frontend.models.Client
-import com.kalabekov.frontend.placeholder.PlaceholderContent
+import com.kalabekov.frontend.R
 
-class ClientList : Fragment() {
+class ClientListFragment : Fragment() {
 
         private lateinit var recyclerView: RecyclerView
         private lateinit var addButton: Button
@@ -29,7 +27,7 @@ class ClientList : Fragment() {
 
         refresher = view.findViewById(R.id.refreshClients)
         refresher.setOnRefreshListener {
-            PlaceholderContent.fetchDataFromServer()
+            StaticClientManager.fetchDataFromServer()
             refresher.isRefreshing = false
         }
 
@@ -42,9 +40,9 @@ class ClientList : Fragment() {
 
         recyclerView = view.findViewById(R.id.list)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        val adapter = RecyclerViewAdapter(PlaceholderContent.ITEMS)
+        val adapter = ClientRecyclerViewAdapter(StaticClientManager.ITEMS)
         recyclerView.adapter = adapter
-        adapter.setOnClickListener(object: RecyclerViewAdapter.OnClickListener{
+        adapter.setOnClickListener(object: ClientRecyclerViewAdapter.OnClickListener {
             override fun onClick(position: Int, model: Client) {
                 val transaction = requireActivity().supportFragmentManager.beginTransaction()
                 val clientFragment = ClientFragment()
@@ -61,6 +59,6 @@ class ClientList : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(columnCount: Int) = ClientList()
+        fun newInstance(columnCount: Int) = ClientListFragment()
     }
 }

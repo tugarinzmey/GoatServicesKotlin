@@ -1,4 +1,4 @@
-package com.kalabekov.frontend
+package com.kalabekov.frontend.client
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import com.kalabekov.frontend.R
+import com.kalabekov.frontend.auth.StaticTokenManager
 import com.kalabekov.frontend.dao.ApiBuilder
-import com.kalabekov.frontend.models.Client
-import com.kalabekov.frontend.placeholder.PlaceholderContent
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,7 +30,7 @@ class ClientFragment() : Fragment() {
 
     val api = ApiBuilder.buildApiClient()
 
-    val token = PlaceholderContent.token
+    val token = StaticTokenManager.getToken()
 
 
     override fun onCreateView(
@@ -71,20 +71,15 @@ class ClientFragment() : Fragment() {
                 call.enqueue(object : Callback<Void> {
                     override fun onResponse(call: Call<Void>, response: Response<Void>) {
                         if (response.isSuccessful) {
-                            // Удаление успешно выполнено
                         } else {
-                            // Обработка ошибки удаления
                         }
                     }
 
                     override fun onFailure(call: Call<Void>, t: Throwable) {
-                        // Обработка ошибок
                     }
                 })
             }
-            if (clientModel != null) {
-                PlaceholderContent.deleteItem(clientModel)
-            }
+            StaticClientManager.deleteItem(clientModel!!)
             returnToList()
         }
 
@@ -111,7 +106,7 @@ class ClientFragment() : Fragment() {
             })
 
             if (updatedClient != null) {
-                PlaceholderContent.updateItem(updatedClient)
+                StaticClientManager.updateItem(updatedClient)
             }
 
             returnToList()
@@ -132,7 +127,7 @@ class ClientFragment() : Fragment() {
                     if (response.isSuccessful) {
                         val addedClient = response.body()
                         if (addedClient != null) {
-                            PlaceholderContent.addItem(addedClient)
+                            StaticClientManager.addItem(addedClient)
 
                         }
                     } else {
@@ -153,7 +148,7 @@ class ClientFragment() : Fragment() {
 
     private fun returnToList() {
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.container, ClientList())
+        transaction.replace(R.id.container, ClientListFragment())
         transaction.commit()
     }
 

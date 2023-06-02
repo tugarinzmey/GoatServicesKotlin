@@ -31,16 +31,16 @@
         app:layout_constraintTop_toBottomOf="@+id/service_name" />
 
     <Button
-        android:id="@+id/add_client"
+        android:id="@+id/add_service"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/add_button"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edit_client"
-        app:layout_constraintEnd_toStartOf="@+id/edit_client"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edit_service"
+        app:layout_constraintEnd_toStartOf="@+id/edit_service"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/edit_client"
+        android:id="@+id/edit_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"
@@ -48,17 +48,17 @@
         android:layout_marginBottom="1dp"
         android:text="@string/save_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/delete_client"
-        app:layout_constraintStart_toEndOf="@+id/add_client" />
+        app:layout_constraintEnd_toStartOf="@+id/delete_service"
+        app:layout_constraintStart_toEndOf="@+id/add_service" />
 
     <Button
-        android:id="@+id/delete_client"
+        android:id="@+id/delete_service"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#970404"
         android:text="@string/delete_button"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edit_client"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edit_service"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edit_client" />
+        app:layout_constraintStart_toEndOf="@+id/edit_service" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

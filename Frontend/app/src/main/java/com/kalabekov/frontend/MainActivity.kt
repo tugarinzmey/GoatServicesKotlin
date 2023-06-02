@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.kalabekov.frontend.client.ClientListFragment
+import com.kalabekov.frontend.payment.PaymentFragment
+import com.kalabekov.frontend.payment.PaymentListFragment
+import com.kalabekov.frontend.service.ServiceListFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,20 +16,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        loadFragment(ClientList())
+        loadFragment(ClientListFragment())
         bottomNav = findViewById(R.id.bottomNav)
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.Client_menu_button -> {
-                    loadFragment(ClientList())
+                    loadFragment(ClientListFragment())
                     true
                 }
                 R.id.Payment_menu_button -> {
-                    loadFragment(PaymentFragment())
+                    loadFragment(PaymentListFragment())
                     true
                 }
                 R.id.Service_menu_button -> {
-                    loadFragment(ServiceFragment())
+                    loadFragment(ServiceListFragment())
                     true
                 }
                 else -> {false}

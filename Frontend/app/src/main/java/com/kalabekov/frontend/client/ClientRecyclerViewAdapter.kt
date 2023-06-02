@@ -1,22 +1,19 @@
-package com.kalabekov.frontend
+package com.kalabekov.frontend.client
 
+import ViewHolder
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 
 import android.view.ViewGroup
+import com.kalabekov.frontend.databinding.ViewHolderBinding
 
-import android.widget.TextView
-
-import com.kalabekov.frontend.databinding.ClientHolderBinding
-import com.kalabekov.frontend.models.Client
-
-class RecyclerViewAdapter(private val values: List<Client>, ) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+class ClientRecyclerViewAdapter(private val values: List<Client>, ) : RecyclerView.Adapter<ViewHolder>() {
     private var onClickListener: OnClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
-            ClientHolderBinding.inflate(
+            ViewHolderBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -46,14 +43,7 @@ class RecyclerViewAdapter(private val values: List<Client>, ) : RecyclerView.Ada
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(binding: ClientHolderBinding) : RecyclerView.ViewHolder(binding.root) {
-        val idView: TextView = binding.itemNumber
-        val contentView: TextView = binding.content
 
-        override fun toString(): String {
-            return super.toString() + " '" + contentView.text + "'"
-        }
-    }
 
 
 }

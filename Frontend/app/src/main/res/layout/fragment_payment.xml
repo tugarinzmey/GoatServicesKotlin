@@ -7,34 +7,32 @@
     android:layout_height="match_parent"
     >
 
-    <EditText
+    <Spinner
         android:id="@+id/payment_client"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:hint="@string/payment_client_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <Spinner
         android:id="@+id/payment_service"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="10dp"
-        android:hint="@string/payment_service_hint"
         app:layout_constraintBottom_toTopOf="@+id/payment_date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_client" />
 
-    <EditText
+    <TextView
         android:id="@+id/payment_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:hint="@string/payment_date_hint"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_service" />
@@ -43,24 +41,37 @@
         android:id="@+id/payment_quantity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="9dp"
+        android:ems="10"
         android:hint="@string/payment_quantity_hint"
-        app:layout_constraintBottom_toTopOf="@+id/payment_amount"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/payment_total"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_date" />
 
-    <EditText
-        android:id="@+id/payment_amount"
+    <TextView
+        android:id="@+id/totalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="19dp"
+        android:text="@string/total_hint"
+        app:layout_constraintBottom_toBottomOf="@+id/payment_total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/payment_quantity" />
+
+    <TextView
+        android:id="@+id/payment_total"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
         android:layout_marginTop="24dp"
-        android:hint="@string/payment_amount_hint"
+        android:gravity="center"
+        android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_quantity" />
@@ -96,6 +107,33 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/edit_payment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edit_payment" />
+
+    <TextView
+        android:id="@+id/client_spinner_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/payment_client_hint"
+        app:layout_constraintBottom_toTopOf="@+id/payment_client"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/service_spinner_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="3dp"
+        android:text="@string/payment_service_hint"
+        app:layout_constraintBottom_toTopOf="@+id/payment_service"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/payment_client" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

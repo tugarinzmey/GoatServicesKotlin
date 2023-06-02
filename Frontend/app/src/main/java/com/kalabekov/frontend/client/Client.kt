@@ -1,4 +1,4 @@
-package com.kalabekov.frontend.models
+package com.kalabekov.frontend.client
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -25,5 +25,9 @@ data class Client(
             return Client(null, firstName, lastName, email, phone, status)
         }
 
+    }
+
+    override fun toString(): String {
+        return firstName
     }
 }
